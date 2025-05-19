@@ -84,6 +84,13 @@
         .faq-answer.active {
             max-height: 200px;
         }
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
     </style>
     <script type="text/javascript">
        (function() {
@@ -168,8 +175,91 @@
         </div>
     </section>
 
+    <!-- Como Usar Section -->
+    <section id="como-usar" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1 rounded-full">Tutorial</span>
+                <h2 class="text-3xl font-bold mt-4 mb-4">Como Usar o AnúncioFácil</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Crie anúncios profissionais em apenas 3 passos simples</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Passo 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 step-card border-t-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <span class="text-indigo-600 font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Forneça Informações Básicas</h3>
+                    <p class="text-gray-600 text-center">Insira apenas algumas informações básicas sobre o seu produto, como nome, características principais e diferenciais.</p>
+                </div>
+                
+                <!-- Passo 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 step-card border-t-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <span class="text-indigo-600 font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Nossa IA Trabalha</h3>
+                    <p class="text-gray-600 text-center">Com apenas essas informações, nossa IA gera descrições persuasivas e otimizadas para SEO que destacam os benefícios do seu produto.</p>
+                </div>
+                
+                <!-- Passo 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 step-card border-t-4 border-indigo-500">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <span class="text-indigo-600 font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Receba Seu Anúncio</h3>
+                    <p class="text-gray-600 text-center">Receba um anúncio profissional pronto para publicar, com descrições otimizadas e imagens aprimoradas para marketplaces.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Recursos Principais</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Gerador de Descrições -->
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 rounded-full p-3 mr-4 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Gerador de Descrições</h4>
+                                <p class="text-gray-600">Com apenas algumas informações básicas sobre o produto, a IA gera descrições persuasivas e otimizadas para SEO que destacam os benefícios e características mais importantes.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Gerador de Imagens -->
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 rounded-full p-3 mr-4 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Gerador de Imagens</h4>
+                                <p class="text-gray-600">Gera imagens profissionais através de uma imagem base do seu produto e algumas informações adicionais. Remove fundos, ajusta dimensões e adiciona elementos visuais que destacam seu produto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium inline-flex items-center transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Experimente Agora Mesmo
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Principais Ferramentas -->
-    <section id="recursos" class="py-12 px-4 bg-white">
+    <section id="recursos" class="py-12 px-4 bg-gray-50">
         <div class="container mx-auto">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold mb-4">Nossas Principais Ferramentas</h2>
@@ -499,5 +589,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94269bc2f6c7628a',t:'MTc0NzY4OTMxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9426d61392eea18b',t:'MTc0NzY5MTcwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
