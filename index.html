@@ -129,9 +129,177 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(238, 77, 45, 0.4);
         }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #333;
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            border-color: #4F46E5;
+            outline: none;
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4F46E5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .login-button:hover {
+            background-color: #3c35b5;
+        }
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #4F46E5;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #4F46E5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+        .or-divider span {
+            padding: 0 10px;
+            color: #666;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="text-2xl font-bold mb-6 text-center">Acesse sua conta</h2>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" class="input-field" placeholder="Seu email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700 mb-2">Senha</label>
+                    <input type="password" id="password" class="input-field" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="login-button">Entrar</button>
+                <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+            </form>
+            <div class="or-divider">
+                <span>ou</span>
+            </div>
+            <button id="freeTrialBtn" class="free-trial-button w-full">Experimente Grátis</button>
+            <p class="register-link">Não tem uma conta? <a href="#" id="showRegisterModal">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeRegisterModal">&times;</span>
+            <h2 class="text-2xl font-bold mb-6 text-center">Crie sua conta</h2>
+            <form id="registerForm">
+                <div class="mb-4">
+                    <label for="registerName" class="block text-gray-700 mb-2">Nome completo</label>
+                    <input type="text" id="registerName" class="input-field" placeholder="Seu nome completo" required>
+                </div>
+                <div class="mb-4">
+                    <label for="registerEmail" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="registerEmail" class="input-field" placeholder="Seu email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="registerPassword" class="block text-gray-700 mb-2">Senha</label>
+                    <input type="password" id="registerPassword" class="input-field" placeholder="Crie uma senha" required>
+                </div>
+                <div class="mb-4">
+                    <label for="confirmPassword" class="block text-gray-700 mb-2">Confirme sua senha</label>
+                    <input type="password" id="confirmPassword" class="input-field" placeholder="Confirme sua senha" required>
+                </div>
+                <button type="submit" class="login-button">Cadastrar</button>
+            </form>
+            <p class="register-link">Já tem uma conta? <a href="#" id="showLoginModal">Faça login</a></p>
+        </div>
+    </div>
+
     <!-- WhatsApp Button -->
     <a href="https://wa.me/5511967652289" target="_blank" class="whatsapp-button">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
@@ -152,9 +320,7 @@
                 <a href="#faq" class="text-gray-600 hover:text-indigo-600 font-medium">FAQ</a>
             </div>
             <div class="hidden md:flex items-center space-x-4">
-                <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="free-trial-button">
-                    Experimente Grátis
-                </a>
+                <button id="navLoginBtn" class="text-indigo-600 font-medium hover:text-indigo-800">Entrar</button>
                 <a href="#planos" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium">Ver Planos</a>
             </div>
             <div class="md:hidden">
@@ -172,7 +338,7 @@
                 <a href="#recursos" class="text-gray-600 hover:text-indigo-600 font-medium">Recursos</a>
                 <a href="#planos" class="text-gray-600 hover:text-indigo-600 font-medium">Planos</a>
                 <a href="#faq" class="text-gray-600 hover:text-indigo-600 font-medium">FAQ</a>
-                <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="free-trial-button text-center">Experimente Grátis</a>
+                <button id="mobileLoginBtn" class="text-indigo-600 font-medium hover:text-indigo-800 text-left">Entrar</button>
                 <a href="#planos" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium text-center">Ver Planos</a>
             </div>
         </div>
@@ -185,12 +351,12 @@
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Bem-vindo ao AnúncioFácil</h1>
                 <p class="text-xl mb-8">Crie anúncios profissionais para Mercado Livre e Shopee em minutos com o poder da Inteligência Artificial.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-medium text-center transition-all flex items-center justify-center">
+                    <button id="heroLoginBtn" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-medium text-center transition-all flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         Experimente Grátis
-                    </a>
+                    </button>
                     <a href="#como-usar" class="bg-white text-indigo-700 px-8 py-3 rounded-full font-medium text-center">Começar Agora</a>
                 </div>
             </div>
@@ -257,12 +423,12 @@
             </div>
             
             <div class="mt-12 text-center">
-                <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium inline-flex items-center transition-colors">
+                <button id="tryNowBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium inline-flex items-center transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     Experimente Agora Mesmo
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -304,9 +470,9 @@
                         </li>
                     </ul>
                     
-                    <a href="https://chatgpt.com/g/g-681ea472a198819189fe2d31ed4ca0bc-descricao-shopee" target="_blank" class="shopee-button w-full block text-center">
+                    <button class="shopee-button w-full block text-center shopee-login-btn">
                         CRIAR ANÚNCIO SHOPEE
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- Anúncio Mercado Livre -->
@@ -337,9 +503,9 @@
                         </li>
                     </ul>
                     
-                    <a href="https://chatgpt.com/g/g-6825dac4a4e08191bee168e75fd83def-criacao-anuncio-mercado-livre" target="_blank" class="mercadolivre-button w-full block text-center">
+                    <button class="mercadolivre-button w-full block text-center ml-login-btn">
                         CRIAR ANÚNCIO MERCADO LIVRE
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -381,7 +547,7 @@
                                 <span>Gerador de descrições básico</span>
                             </li>
                         </ul>
-                        <a href="https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml" target="_blank" class="free-trial-button w-full block text-center">Começar Grátis</a>
+                        <button class="free-trial-button w-full block text-center free-trial-login-btn">Começar Grátis</button>
                     </div>
                 </div>
                 
@@ -515,6 +681,20 @@
                         <p class="text-gray-600">Sim, você pode cancelar sua assinatura a qualquer momento. Basta acessar sua conta no Mercado Pago e cancelar a assinatura. Você continuará tendo acesso às ferramentas até o final do período pago.</p>
                     </div>
                 </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-4">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Como acesso minha conta?</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-600">Após realizar sua assinatura, você receberá um email com instruções para acessar sua conta. Você pode fazer login a qualquer momento clicando no botão "Entrar" no topo da página. Se tiver problemas para acessar sua conta, entre em contato com nosso suporte.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -599,7 +779,141 @@
                     }
                 });
             });
+            
+            // Login Modal
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            const closeModal = document.getElementById('closeModal');
+            const closeRegisterModal = document.getElementById('closeRegisterModal');
+            const showRegisterModal = document.getElementById('showRegisterModal');
+            const showLoginModal = document.getElementById('showLoginModal');
+            
+            // Botões que abrem o modal de login
+            const loginButtons = [
+                document.getElementById('navLoginBtn'),
+                document.getElementById('mobileLoginBtn'),
+                document.getElementById('heroLoginBtn'),
+                document.getElementById('tryNowBtn'),
+                ...document.querySelectorAll('.shopee-login-btn'),
+                ...document.querySelectorAll('.ml-login-btn'),
+                ...document.querySelectorAll('.free-trial-login-btn')
+            ];
+            
+            // Função para abrir o modal de login
+            function openLoginModal() {
+                loginModal.style.display = 'flex';
+                registerModal.style.display = 'none';
+            }
+            
+            // Adicionar evento de clique a todos os botões de login
+            loginButtons.forEach(button => {
+                if (button) {
+                    button.addEventListener('click', openLoginModal);
+                }
+            });
+            
+            // Fechar modal de login
+            closeModal.addEventListener('click', function() {
+                loginModal.style.display = 'none';
+            });
+            
+            // Fechar modal de registro
+            closeRegisterModal.addEventListener('click', function() {
+                registerModal.style.display = 'none';
+            });
+            
+            // Alternar para o modal de registro
+            showRegisterModal.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'flex';
+            });
+            
+            // Alternar para o modal de login
+            showLoginModal.addEventListener('click', function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'flex';
+            });
+            
+            // Fechar modais ao clicar fora deles
+            window.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === registerModal) {
+                    registerModal.style.display = 'none';
+                }
+            });
+            
+            // Botão de teste gratuito dentro do modal
+            const freeTrialBtn = document.getElementById('freeTrialBtn');
+            freeTrialBtn.addEventListener('click', function() {
+                loginModal.style.display = 'none';
+                window.open('https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml', '_blank');
+            });
+            
+            // Formulário de login
+            const loginForm = document.getElementById('loginForm');
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Aqui você adicionaria a lógica de autenticação real
+                // Por enquanto, vamos simular um login bem-sucedido
+                
+                // Simular verificação de login (em um sistema real, isso seria feito no servidor)
+                if (email && password) {
+                    // Redirecionar para a ferramenta apropriada com base no botão clicado
+                    // Aqui você pode adicionar lógica para determinar qual ferramenta abrir
+                    
+                    // Fechar o modal
+                    loginModal.style.display = 'none';
+                    
+                    // Mostrar mensagem de sucesso
+                    alert('Login realizado com sucesso! Redirecionando para a ferramenta...');
+                    
+                    // Redirecionar para a ferramenta (você pode personalizar isso com base no botão clicado)
+                    setTimeout(function() {
+                        window.open('https://chatgpt.com/g/g-681234c843148191a5e897913f6fbac0-6-imagens-ml', '_blank');
+                    }, 500);
+                } else {
+                    alert('Por favor, preencha todos os campos.');
+                }
+            });
+            
+            // Formulário de registro
+            const registerForm = document.getElementById('registerForm');
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('registerName').value;
+                const email = document.getElementById('registerEmail').value;
+                const password = document.getElementById('registerPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                // Validação básica
+                if (name && email && password && confirmPassword) {
+                    if (password !== confirmPassword) {
+                        alert('As senhas não coincidem.');
+                        return;
+                    }
+                    
+                    // Aqui você adicionaria a lógica de registro real
+                    
+                    // Fechar o modal de registro
+                    registerModal.style.display = 'none';
+                    
+                    // Mostrar mensagem de sucesso
+                    alert('Conta criada com sucesso! Faça login para continuar.');
+                    
+                    // Abrir o modal de login
+                    loginModal.style.display = 'flex';
+                } else {
+                    alert('Por favor, preencha todos os campos.');
+                }
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'942c10fca77a0301',t:'MTc0Nzc0NjU0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'942c74683563023d',t:'MTc0Nzc1MDYxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
