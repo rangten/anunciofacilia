@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -89,6 +90,44 @@
         .step-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .mercadolivre-button {
+            background-color: #FFE600;
+            color: #333333;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .mercadolivre-button:hover {
+            background-color: #E6CF00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 230, 0, 0.4);
+        }
+        .shopee-button {
+            background-color: #EE4D2D;
+            color: white;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .shopee-button:hover {
+            background-color: #D23F20;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(238, 77, 45, 0.4);
         }
     </style>
 </head>
@@ -201,7 +240,7 @@
                     <h3 class="text-2xl font-bold mb-6 text-center">Recursos Principais</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Gerador de Descrições -->
+                        <!-- Anúncios e Imagens -->
                         <div class="flex items-start">
                             <div class="bg-indigo-100 rounded-full p-3 mr-4 mt-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -209,21 +248,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold mb-2">Gerador de Descrições</h4>
-                                <p class="text-gray-600">Com apenas algumas informações básicas sobre o produto, a IA gera descrições persuasivas e otimizadas para SEO que destacam os benefícios e características mais importantes.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Gerador de Imagens -->
-                        <div class="flex items-start">
-                            <div class="bg-pink-100 rounded-full p-3 mr-4 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold mb-2">Gerador de Imagens</h4>
-                                <p class="text-gray-600">Gera imagens profissionais através de uma imagem base do seu produto e algumas informações adicionais. Remove fundos, ajusta dimensões e adiciona elementos visuais que destacam seu produto.</p>
+                                <h4 class="text-lg font-semibold mb-2">Anúncios e Imagens Otimizados</h4>
+                                <p class="text-gray-600">Nossa IA gera anúncios e imagens de acordo com as regras específicas do Mercado Livre e Shopee, garantindo maior visibilidade e conversão para seus produtos em ambas as plataformas.</p>
                             </div>
                         </div>
                     </div>
@@ -250,69 +276,69 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Gerador de Descrições -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-indigo-500">
+                <!-- Anúncio Shopee -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-orange-500">
                     <div class="flex items-center mb-4">
-                        <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold">Gerador de Descrições</h3>
+                        <h3 class="text-2xl font-bold">Anúncio Shopee</h3>
                     </div>
                     
-                    <p class="text-gray-600 mb-6">Crie descrições persuasivas e otimizadas para SEO com apenas alguns cliques. Nossa IA destaca os benefícios do seu produto e gera textos que convertem.</p>
+                    <p class="text-gray-600 mb-6">Crie anúncios otimizados para a Shopee com descrições persuasivas e seguindo todas as regras da plataforma para maximizar suas vendas.</p>
                     
                     <ul class="space-y-3 mb-6">
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Textos otimizados para SEO</span>
                         </li>
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Destaque de benefícios do produto</span>
                         </li>
                     </ul>
                     
-                    <a href="https://chatgpt.com/g/g-6825dac4a4e08191bee168e75fd83def-criacao-anuncio-mercado-livre" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium w-full block text-center hover:bg-indigo-700">
-                        CRIAR DESCRIÇÃO AGORA
+                    <a href="https://chatgpt.com/g/g-681ea472a198819189fe2d31ed4ca0bc-descricao-shopee" target="_blank" class="shopee-button w-full block text-center">
+                        CRIAR ANÚNCIO SHOPEE
                     </a>
                 </div>
                 
-                <!-- Gerador de Imagens -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-pink-500">
+                <!-- Anúncio Mercado Livre -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-yellow-500">
                     <div class="flex items-center mb-4">
-                        <div class="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold">Gerador de Imagens</h3>
+                        <h3 class="text-2xl font-bold">Anúncio Mercado Livre</h3>
                     </div>
                     
-                    <p class="text-gray-600 mb-6">Otimize suas imagens para marketplaces com remoção de fundo, ajuste de dimensões e adição de marcas d'água personalizadas.</p>
+                    <p class="text-gray-600 mb-6">Crie anúncios otimizados para o Mercado Livre com descrições e imagens que seguem todas as regras da plataforma para aumentar suas vendas.</p>
                     
                     <ul class="space-y-3 mb-6">
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Remoção de fundo automática</span>
+                            <span>Anúncios otimizados para o Mercado Livre</span>
                         </li>
                         <li class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Ajuste para dimensões ideais</span>
+                            <span>Imagens otimizadas para maior conversão</span>
                         </li>
                     </ul>
                     
-                    <a href="https://chatgpt.com/g/g-6825e68cbb208191a48f446d1f9fafc3-criacao-fotos-mercado-livre" target="_blank" class="bg-pink-600 text-white px-6 py-3 rounded-lg font-medium w-full block text-center hover:bg-pink-700">
-                        CRIAR IMAGENS AGORA
+                    <a href="https://chatgpt.com/g/g-6825dac4a4e08191bee168e75fd83def-criacao-anuncio-mercado-livre" target="_blank" class="mercadolivre-button w-full block text-center">
+                        CRIAR ANÚNCIO MERCADO LIVRE
                     </a>
                 </div>
             </div>
@@ -575,5 +601,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94272757132c9d59',t:'MTc0NzY5NTAzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'942c10fca77a0301',t:'MTc0Nzc0NjU0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
