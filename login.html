@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Admin</title>
+  <script>
+    function verificarSenha() {
+      var senha = document.getElementById("senha").value;
+      if (senha === "admin123") {
+        window.location.href = "admin.html";
+      } else {
+        alert("Senha incorreta!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Área Administrativa</h2>
+  <input type="password" id="senha" placeholder="Digite a senha">
+  <button onclick="verificarSenha()">Entrar</button>
+</body>
+</html>
