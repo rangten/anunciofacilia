@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Login Admin</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
-        input { padding: 10px; font-size: 16px; margin-top: 10px; }
-        button { padding: 10px 20px; font-size: 16px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Login Admin</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; text-align: center; margin-top: 100px; }
+    input { padding: 10px; margin: 10px; width: 200px; }
+    button { padding: 10px 20px; }
+  </style>
 </head>
 <body>
-    <h2>Área Administrativa</h2>
-    <p>Digite a senha para acessar o painel:</p>
-    <input type="password" id="senha" placeholder="Senha"><br>
-    <button onclick="verificarSenha()">Entrar</button>
+  <h2>Área Restrita</h2>
+  <p>Digite a senha para acessar o painel:</p>
+  <input type="password" id="senha" placeholder="Senha" />
+  <br>
+  <button onclick="verificarSenha()">Entrar</button>
 
-    <script>
-        function verificarSenha() {
-            const senha = document.getElementById('senha').value;
-            if (senha === 'facilia2025') {
-                window.location.href = 'painel.html';
-            } else {
-                alert('Senha incorreta!');
-            }
-        }
-    </script>
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById("senha").value;
+      if (senha === "facilia2025") {
+        window.location.href = "painel.html";
+      } else {
+        alert("Senha incorreta!");
+      }
+    }
+  </script>
 </body>
 </html>

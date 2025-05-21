@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Painel Admin</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+    section { padding: 20px; }
+    h2 { color: #333; }
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 500px;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+  </style>
 </head>
 <body>
+  <header>
     <h1>Painel Administrativo</h1>
-    <p>Bem-vindo! Aqui você poderá gerenciar seu conteúdo.</p>
+  </header>
+  <section>
+    <div class="card">
+      <h2>Total de Assinantes</h2>
+      <p>128 usuários ativos</p>
+    </div>
+    <div class="card">
+      <h2>Últimos Planos Ativados</h2>
+      <ul>
+        <li>João - Profissional</li>
+        <li>Maria - Gratuito</li>
+        <li>Lucas - Empresarial</li>
+      </ul>
+    </div>
+  </section>
 </body>
 </html>
