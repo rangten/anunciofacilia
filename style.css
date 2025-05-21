@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+footer {
+  background: #eee;
+  padding: 15px;
+  text-align: center;
+}
+.login-container {
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+input[type="password"] {
+  padding: 8px;
+  width: 80%;
+  margin-bottom: 10px;
+}
