@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Anúncio Fácil IA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    iframe { width: 100%; height: 100vh; border: none; }
+    .admin-button {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://rangten.github.io/anunciofacilia/original-site.html"></iframe>
+
+  <button class="admin-button" onclick="login()">Área Admin</button>
+
+  <script>
+    function login() {
+      const senha = prompt("Digite a senha para acessar a Área Admin:");
+      if (senha === "admin123") {
+        window.location.href = "painel.html";
+      } else if (senha !== null) {
+        alert("Senha incorreta!");
+      }
+    }
+  </script>
+</body>
+</html>
