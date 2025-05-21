@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anúncio Fácil IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .admin-link {
+      display: inline-block;
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    #senhaModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #senhaModal .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    #painelAdmin {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1 style="text-align:center; padding: 40px;">Bem-vindo ao Anúncio Fácil IA</h1>
+    <p style="text-align:center;">Seu assistente para criar anúncios no Mercado Livre e Shopee.</p>
+  </main>
+
+  <footer>
+    <span class="admin-link" onclick="document.getElementById('senhaModal').style.display = 'flex'">Área Admin</span>
+  </footer>
+
+  <div id="senhaModal">
+    <div class="modal-content">
+      <h3>Digite a senha de acesso</h3>
+      <input type="password" id="senhaInput" placeholder="Senha" style="padding:10px; width: 90%; margin-top:10px;">
+      <div style="margin-top: 20px;">
+        <button onclick="verificarSenha()">Acessar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="painelAdmin"></div>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById('senhaInput').value;
+      if (senha === "admin123") {
+        document.getElementById('senhaModal').style.display = 'none';
+        fetch("painel.html")
+          .then(res => res.text())
+          .then(html => {
+            document.body.innerHTML = html;
+          });
+      } else {
+        alert("Senha incorreta!");
+      }
+    }
+  </script>
+</body>
+</html>
